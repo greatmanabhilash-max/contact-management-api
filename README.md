@@ -1,20 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project for a simple contact management API with a basic CRUD UI.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## UI Usage
+
+The homepage includes a simple form to test CRUD operations:
+
+- Choose a method: `GET`, `POST`, `PUT`, or `DELETE`
+- Enter a contact ID for `GET`, `PUT`, or `DELETE`
+- Fill in the contact fields for `POST` or `PUT`
+- Click `Submit` to send the request
+- View the API response in the response panel
+
+## API Endpoints
 
 The API endpoints are available under `pages/api/contacts`:
 
@@ -26,7 +38,12 @@ The API endpoints are available under `pages/api/contacts`:
 
 The API uses an in-memory store and will reset when the server restarts.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+
+- `app/page.tsx` - CRUD UI page
+- `pages/api/contacts/index.ts` - create/list contacts
+- `pages/api/contacts/[id].ts` - get/update/delete a specific contact
+- `lib/contacts.ts` - in-memory contact storage
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
